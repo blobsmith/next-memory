@@ -1,22 +1,21 @@
-import Link from "next/link"
-
 import { PreviewAlert } from "@/components/preview-alert"
+import * as React from "react";
 
-export function Layout({ children }) {
+import MainNav from "./main-nav";
+import FooterNav from "./footer-nav";
+
+export function Layout({ children, menu }) {
   return (
-    <>
+      <>
       <PreviewAlert />
-      <div className="max-w-screen-md px-6 mx-auto">
+      <div className="container">
         <header>
-          <div className="container flex items-center justify-between py-6 mx-auto">
-            <Link href="/" passHref>
-              <a className="text-2xl font-semibold no-underline">
-                Next.js for Drupal
-              </a>
-            </Link>
-          </div>
+          <MainNav menu={menu} />
         </header>
-        <main className="container py-10 mx-auto">{children}</main>
+          {children}
+        <footer>
+          <FooterNav />
+        </footer>
       </div>
     </>
   )

@@ -1,0 +1,38 @@
+@import "variables.module";
+
+.content-right {
+  padding-left: 10px;
+
+  aside {
+    padding: 0 5px;
+
+    .body {
+      border-top: 1px solid $border-default-color;
+      border-bottom: 1px solid $border-default-color;
+    }
+
+    .image {
+      margin-bottom: 2px;
+      img {
+        border-radius: $border-radius $border-radius 0 0;
+      }
+    }
+
+    .tag-container {
+      border-bottom: 1px dashed $border-default-color;
+      text-align: center;
+      padding-bottom: 10px;
+    }
+
+    .link-container {
+      text-align: center;
+      margin-top: 6px;
+      margin-bottom: 2px;
+      .links {
+        a {
+          color: $dark;
+        }
+      }
+    }
+  }
+}

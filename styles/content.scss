@@ -1,0 +1,195 @@
+@import "variables.module";
+
+main {
+  margin-bottom: 30px;
+
+  .paragraph {
+    margin-top: 10px;
+
+    .text {
+      border-bottom: 1px dashed $border-default-color;
+    }
+
+    article {
+      position: relative;
+      height: 100%;
+
+      h2 {
+        font-family: $text-font;
+        font-size: 17px;
+        color: black;
+        margin-top: 5px;
+      }
+
+      &.card {
+        border-radius: 0;
+        padding-bottom: 0;
+        background-color: white;
+        box-shadow: 0 4px 10px rgb(0 0 0 / 20%);
+
+        a {
+          border-bottom: 1px dashed black;
+          margin-bottom: 3px;
+
+          div.image-card {
+
+            img {
+              border-bottom:2px solid $selected;
+            }
+          }
+          h2.title {
+            margin: 10px;
+          }
+        }
+
+        .tags-content {
+          width: 80%;
+          padding-right: 10px;
+          padding-left: 10px;
+          padding-bottom: 10px;
+          min-height: 45px;
+          span {
+            &:hover {
+              transform: rotate(0deg);
+              font-size: 10px;
+              line-height: initial;
+              border-left: none;
+              border-right: none;
+              border-top: none;
+              border-bottom: 1px dashed $selected;
+              border-radius: initial;
+              padding: initial;
+
+              .tag-label {
+                top: -12px;
+                right: -22px;
+              }
+            }
+          }
+        }
+
+        .date-content {
+          position: absolute;
+          bottom: 5px;
+          right: 0;
+          width: 50px;
+
+          .date-full {
+            position: relative;
+            bottom: 0;
+            right: 0;
+          }
+        }
+
+        &:hover {
+          a {
+            h2.title {
+              color: $selected;
+            }
+          }
+        }
+      }
+    }
+
+    .table-borderless {
+      border-collapse:separate;
+      border-spacing:0 10px;
+
+      tr {
+        position: relative;
+        background-color: white;
+        border-left: 2px solid black;
+        border-right: 2px solid black;
+
+
+        &:hover {
+          border-left: 2px solid $selected;
+          border-right: 2px solid $selected;
+        }
+
+        &:hover {
+          td {
+            &:first-child {
+              border-left: 2px solid $selected;
+            }
+            &:last-child {
+              border-right: 2px solid $selected;
+            }
+            a {
+              color: $selected;
+            }
+          }
+        }
+
+        td {
+          border-bottom: 1px solid $border-default-color;
+          &:first-child {
+            border-radius: $border-radius 0 0 $border-radius;
+            border-left: 2px solid $border-default-color;
+          }
+          &:last-child {
+            border-right: 2px solid $border-default-color;
+            border-radius: 0 $border-radius $border-radius 0;
+          }
+        }
+
+        .image-cell {
+          width: 100px;
+          padding: 0;
+          img {
+            border-radius: $border-radius 0 0 $border-radius;
+          }
+        }
+
+        .title-cell {
+          padding: 0 0 0 8px;
+          a {
+            color: $dark;
+          }
+
+          .summary {
+            @extend .small-text;
+          }
+        }
+
+        .date-cell {
+          width: 150px;
+          text-align: right;
+          position: absolute;
+          right: 5px;
+          bottom: 3px;
+        }
+      }
+    }
+
+    .warning {
+      padding-top: 4px;
+      padding-bottom: 4px;
+      margin: 0;
+      width: 100%;
+      margin-bottom: 8px;
+
+      &.warning-info {
+        border-left: 3px solid $warning-info;
+        background-color: $warning-info-background;
+        border-bottom: 1px solid $warning-info;
+
+        svg {
+          color: $warning-info;
+        }
+      }
+
+      &.warning-warning {
+        border-left: 3px solid #ea3636;
+        background-color: $warning-background;
+        border-bottom: 1px solid $warning-color;
+        svg {
+          color: $warning-color;
+        }
+      }
+    }
+  }
+  .tags {
+    text-align: center;
+  }
+}

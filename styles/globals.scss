@@ -1,0 +1,244 @@
+@import "../node_modules/bootstrap/scss/bootstrap";
+@import "variables.module";
+
+::selection {
+  background-color: $selected;
+  color: white;
+}
+
+:root {
+  //--bs-dark-rgb: 46,173,147;
+  --bs-dark-rgb: 150,0,0;
+}
+
+a, blockquote, .text-field {
+  text-decoration: none;
+}
+
+blockquote,
+card {
+  font-family: $text-font;
+}
+cite {
+  color: $dark;
+}
+
+.content-center {
+  border-top: 1px solid $dark;
+}
+
+.date {
+  @extend .small-text;
+}
+
+input.form-control,
+textarea.form-control {
+  border-radius: 0;
+  transition: border-radius 0.2s, border 0.2s;
+  &:focus {
+    box-shadow: none;
+  }
+  &:hover {
+    //border-radius: $border-radius;
+    border: 2px dashed $selected;
+  }
+}
+
+blockquote,
+figcaption,
+.blockquote-footer {
+  margin:0;
+
+  &.page-title {
+    margin-bottom: 0;
+  }
+}
+
+form {
+  .mb-3 {
+    &.textfield-container,
+    &.email-container {
+      margin-bottom: 0.5rem !important;
+    }
+
+    &.textarea-container {
+      height: 80px;
+    }
+  }
+}
+
+
+
+.input-container {
+  position: relative;
+
+  &.textfield,
+  &.email,
+  &.textarea {
+    height: 38px;
+  }
+
+
+  label {
+    transform: translate(1rem, -2rem);
+    transition: all 0.1s ease-in;
+    color: $input-label;
+
+    &.required:after {
+      color: red;
+      content: '*';
+    }
+  }
+
+  &.textarea {
+    label {
+      transform: translate(1rem, -5rem);
+    }
+  }
+
+  input:focus,
+  input:not(:placeholder-shown),
+  textarea:focus,
+  textarea:not(:placeholder-shown) {
+    margin-top: 30px;
+  }
+
+  input:focus + label {
+    color: black;
+    transform: translate(0, -4rem);
+  }
+
+  input:focus + label,
+  input:not(:placeholder-shown) + label  {
+    color: black;
+    transform: translate(0, -4rem);
+    font-weight: bold;
+    font-size: 15px;
+  }
+
+  &.textarea {
+    textarea:focus + label,
+    textarea:not(:placeholder-shown) + label {
+      color: black;
+      transform: translate(0, -7rem);
+      font-weight: bold;
+      font-size: 15px;
+    }
+  }
+
+  &:focus {
+    background-color: red;
+  }
+  .label-container {
+    position: absolute;
+    top: 5px;
+    left: 13px;
+  }
+}
+
+.date-full {
+  width: 73px;
+  .date-left {
+    float: left;
+
+    .date-day {
+      font-size: 20px;
+      text-align: center;
+      font-family: monospace;
+      height: 26px;
+    }
+    .date-month {
+      font-size: 15px;
+      line-height: 14px;
+      text-align: center;
+      text-transform: capitalize;
+      margin-top: 3px;
+    }
+  }
+
+  .date-right {
+    float: left;
+
+    .date-year {
+      writing-mode: vertical-rl;
+      text-orientation: mixed;
+      font-size: 16px;
+      margin-top: 7px;
+      font-weight: bold;
+      color: black;
+    }
+  }
+}
+
+.article-tags {
+  line-height: 10px;
+  span {
+    position: relative;
+    display: inline-block;
+    margin-right: 10px;
+    font-size: 10px;
+    border-bottom: 1px dashed black;
+    transition: border-bottom 0.2s, font-size 0.2s, line-height 0.2s, border-radius 0.2s, padding 0.2s, transform 0.2s;
+    &:hover {
+      cursor: pointer;
+      font-size: 20px;
+      line-height: 20px;
+      border: 2px dashed $selected;
+      border-radius: 20px;
+      padding: 7px;
+      transform: rotate(-15deg);
+
+      .tag-label {
+        display: inline-block;
+        top: -22px;
+        right: -5px;
+        background: white;
+        font-weight: bold;
+      }
+    }
+
+    .tag-label {
+      position: absolute;
+      display: none;
+    }
+  }
+}
+
+.article-list {
+  margin-bottom: 20px;
+
+  .article-middle {
+    margin-left: 52px;
+
+    .article-title {
+      a {
+        color: black;
+        &:hover {
+          color: $selected;
+        }
+      }
+    }
+
+    cite {
+      font-size: 11px;
+    }
+  }
+}
+
+.btn-styled {
+  border-radius: 0;
+  border-bottom: 1px dashed black;
+  transition: all 0.1s ease-in;
+  padding-left: 4px;
+  padding-right: 4px;
+  &:hover {
+    border: 2px dashed red;
+    border-radius: 20px;
+    transform: rotate(-15deg);
+    font-weight: bold;
+    font-size: 20px;
+  }
+  &:focus {
+    box-shadow: none;
+  }
+}
